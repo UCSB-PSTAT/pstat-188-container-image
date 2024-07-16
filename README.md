@@ -1,9 +1,3 @@
-# Container image source for <course>
-Info here about where to find and run this image.
-
-# Template instructions (**DELETE THIS SECTION**)
-
-* Uncomment and add necessary libraries to Containerfile
-* mv Jenkinsfile.template to Jenkinsfile
-* Update image variable and add tests to Jenkinsfile
+# Container image source for PSTAT-194TR
+This is a Jupyter Single User Image that has been customized for use with PSTAT-194TR. You can obtain the latest version of this image from docker hub by running `podman pull docker.io/ucsb/pstat-194tr:latest`
 
