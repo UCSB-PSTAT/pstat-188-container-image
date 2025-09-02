@@ -13,6 +13,7 @@ RUN conda install -y -c conda-forge \
     r-fivethirtyeight \
     r-kableextra \
     r-ggally \
+    r-leaflet \
     r-learnr \
     r-mosaic \
     r-mosaiccore \
@@ -23,7 +24,7 @@ RUN conda install -y -c conda-forge \
     r::r-cherryblossom \
     r::r-lock5data \
     r::r-openintro 
-    
+
 RUN R -e "install.packages(c('tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 RUN R -e 'devtools::install_github("hadley/emo")'
 
