@@ -24,7 +24,7 @@ RUN mamba install -y --freeze-installed -c conda-forge \
 
 RUN R -e 'pak::pkg_install("OpenIntroStat/cherryblossom")'
 RUN R -e "install.packages(c('Lock5Data','openintro','tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
-RUN R -e 'devtools::install_github("hadley/emo")'
+RUN R -e 'pak::pkg_install("hadley/emo")'
 
 USER $NB_USER
 
