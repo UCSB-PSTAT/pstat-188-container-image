@@ -21,9 +21,9 @@ RUN conda install -y -c conda-forge \
     r-network \
     r-palmerpenguins \
     r-skimr \ 
-    r::r-cherryblossom \
-    r::r-lock5data \
-    r::r-openintro 
+    r-cherryblossom \
+    r-lock5data \
+    r-openintro 
 
 RUN R -e "install.packages(c('tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 RUN R -e 'devtools::install_github("hadley/emo")'
