@@ -20,11 +20,10 @@ RUN mamba install -y --freeze-installed -c conda-forge \
     r-mosaicdata \
     r-network \
     r-palmerpenguins \
-    r-skimr \ 
-    r::r-openintro && mamba clean all 
+    r-skimr && mamba clean all 
 
 RUN R -e 'pak::pkg_install("OpenIntroStat/cherryblossom")'
-RUN R -e "install.packages(c('Lock5Data','tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
+RUN R -e "install.packages(c('Lock5Data','openintro','tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 RUN R -e 'devtools::install_github("hadley/emo")'
 
 USER $NB_USER
