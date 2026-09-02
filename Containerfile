@@ -8,7 +8,7 @@ RUN apt update && \
     apt install -y texlive-full lmodern libbz2-dev nano && \
     apt clean
 
-RUN conda install -y -c conda-forge \
+RUN mamba install -y -c conda-forge \
     r-dt \
     r-fivethirtyeight \
     r-kableextra \
@@ -21,9 +21,9 @@ RUN conda install -y -c conda-forge \
     r-network \
     r-palmerpenguins \
     r-skimr \ 
-    r-cherryblossom \
-    r-lock5data \
-    r-openintro 
+    r::r-cherryblossom \
+    r::r-lock5data \
+    r::r-openintro 
 
 RUN R -e "install.packages(c('tutorial.helpers'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 RUN R -e 'devtools::install_github("hadley/emo")'
